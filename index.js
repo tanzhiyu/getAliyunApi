@@ -88,7 +88,7 @@ setInterval(() => {
     console.log(JSON.stringify(res, null, 2))
     genGeoFile('./GeoLocation.json', res)
   })
-}, 1000)
+}, 1000 * 60)
 
 
 const writeEmptyArry = (file) => {
