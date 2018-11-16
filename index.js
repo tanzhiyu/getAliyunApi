@@ -102,7 +102,7 @@ const genGeoFile = (file='./GeoLocation.json', info) => {
   info.time = new Date().toLocaleString()
   fs.readFile(file, (err, data) => {
     if (err) throw err
-    const content = data.toString() && JSON.parse(data.toString())
+    const content = data.toString().trim() && JSON.parse(data)
     if (Array.isArray(content)) {
       content.push(info)
       writeDataToFile(file, content)
