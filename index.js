@@ -88,7 +88,7 @@ setInterval(() => {
     // console.log(JSON.stringify(res, null, 2))
     genGeoFile('./GeoLocation.json', res)
   })
-}, 1000 * 60)
+}, 1000)
 
 
 const writeEmptyArry = (file) => {
@@ -102,7 +102,7 @@ const genGeoFile = (file='./GeoLocation.json', info) => {
   info.time = new Date().toLocaleString()
   fs.readFile(file, (err, data) => {
     if (err) throw err
-    const content = data.toString() && JSON.parse(data)
+    const content = data.toString().trim() && JSON.parse(data)
     if (Array.isArray(content)) {
       content.push(info)
       writeDataToFile(file, content)
