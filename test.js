@@ -1,0 +1,1 @@
+const info = '我是从server分支checkout过来的'
